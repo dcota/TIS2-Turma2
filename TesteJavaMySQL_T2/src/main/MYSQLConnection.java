@@ -37,4 +37,8 @@ public class MYSQLConnection {
         return null;
     }
 
+    public void insertLine(){
+
+    }
+
 }

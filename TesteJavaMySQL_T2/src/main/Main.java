@@ -10,11 +10,11 @@ public class Main {
 
         MYSQLConnection connection = new MYSQLConnection();
 
-        ResultSet result = connection.querySELECT("SELECT * FROM city");
+        ResultSet result = connection.querySELECT("SELECT Name FROM city");
         //mostrar os nomes de todas as cidades
         while(result.next()) {
-            String countryCode = result.getString(2);
-            System.out.println(countryCode);
+            String area = result.getString("Name");
+            System.out.println(area);
         }
 
     }
