@@ -1,22 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="757.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Button fx:id="btnMudaTexto" layoutX="274.0" layoutY="61.0" mnemonicParsing="false" text="&gt;&gt;">
+      <Button fx:id="btnMudaTexto" layoutX="306.0" layoutY="41.0" mnemonicParsing="false" onAction="#mudaTexto" prefHeight="27.0" prefWidth="73.0" text="&gt;&gt;">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <TextField fx:id="tfOrigem" layoutX="63.0" layoutY="61.0" />
-      <TextField fx:id="tfDestino" layoutX="391.0" layoutY="61.0" />
-      <Label layoutX="65.0" layoutY="43.0" text="Origem:" />
-      <Label layoutX="393.0" layoutY="43.0" text="Destino:" />
+      <TextField fx:id="tfOrigem" layoutX="70.0" layoutY="42.0" />
+      <Label layoutX="72.0" layoutY="24.0" text="Origem:" />
+      <Label layoutX="515.0" layoutY="24.0" text="Destino:" />
+      <TextArea fx:id="tfDestino" layoutX="515.0" layoutY="41.0" prefHeight="308.0" prefWidth="200.0" />
+      <ComboBox fx:id="cbLinguagem" layoutX="70.0" layoutY="116.0" onAction="#selecionaLinguagem" prefWidth="150.0" />
+      <Label layoutX="72.0" layoutY="96.0" text="Escolha uma linguagem de programação:" />
+      <Label fx:id="lbLinguagemEscolhida" layoutX="245.0" layoutY="120.0" text="Linguagem escolhida:" />
+      <CheckBox fx:id="chkOp1" layoutX="70.0" layoutY="187.0" mnemonicParsing="false" text="Java" />
+      <CheckBox fx:id="chkOp2" layoutX="70.0" layoutY="212.0" mnemonicParsing="false" text="Python" />
+      <CheckBox fx:id="chkOp3" layoutX="70.0" layoutY="237.0" mnemonicParsing="false" text="C#" />
+      <TextArea fx:id="taLinguagensEscolhidas" layoutX="234.0" layoutY="181.0" prefHeight="80.0" prefWidth="115.0" />
+      <Button fx:id="btnMudaLinguagem" layoutX="156.0" layoutY="209.0" mnemonicParsing="false" onAction="#selecionaLinguagemChkBox" text="&gt;&gt;" />
+      <Label fx:id="lblErroSelecaoChkBox" layoutX="70.0" layoutY="277.0" textFill="#dd1717" />
+      <RadioButton fx:id="rb1" layoutX="71.0" layoutY="337.0" mnemonicParsing="false" text="Entre 5 e 15 anos" />
+      <RadioButton fx:id="rb2" layoutX="71.0" layoutY="366.0" mnemonicParsing="false" text="Entre 16 e 25 anos" />
+      <RadioButton fx:id="rb3" layoutX="71.0" layoutY="394.0" mnemonicParsing="false" text="Mais do que 26 anos" />
+      <Label fx:id="lblRadioButton" layoutX="70.0" layoutY="423.0" text="A sua idade situa-se no intervalo:  " />
    </children>
 </AnchorPane>
