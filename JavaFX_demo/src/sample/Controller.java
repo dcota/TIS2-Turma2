@@ -42,6 +42,8 @@ public class Controller {
 
     private String textoLabel;
 
+    private String textoLabelRB;
+
     private ToggleGroup tg;
 
     public void initialize() {
@@ -56,6 +58,7 @@ public class Controller {
 
         //guarda o texto da label
         textoLabel = this.lbLinguagemEscolhida.getText();
+        textoLabelRB = this.lblRadioButton.getText();
 
         //criar um togglegroup para os radiobuttons
         tg = new ToggleGroup();
@@ -73,6 +76,13 @@ public class Controller {
             this.tfOrigem.setText("");
         }
 
+        //gerar um alerta de sucesso
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setHeaderText(null);
+        alerta.setTitle("SUCESSO");
+        alerta.setContentText("Texto adicionado com sucesso!");
+        alerta.showAndWait();
+
     }
 
     public void selecionaLinguagem (ActionEvent event){
@@ -82,6 +92,7 @@ public class Controller {
     }
 
     public void selecionaLinguagemChkBox (ActionEvent event){
+        //verifica as caixas que estão selecionadas e passa o texto para a caixa da direita
         String texto = "";
         this.taLinguagensEscolhidas.setText("");
         if(this.chkOp1.isSelected()){
@@ -99,6 +110,17 @@ public class Controller {
         else{
             this.lblErroSelecaoChkBox.setText("");
             this.taLinguagensEscolhidas.setText(texto);
+        }
+
+        //verifica qual o raiobutton que está selecionado e escreve a opção em baixo
+        if(this.rb1.isSelected()){
+            this.lblRadioButton.setText(textoLabelRB + this.rb1.getText());
+        }
+        else if(this.rb2.isSelected()){
+            this.lblRadioButton.setText(textoLabelRB + this.rb2.getText());
+        }
+        else if(this.rb3.isSelected()) {
+            this.lblRadioButton.setText(textoLabelRB + this.rb3.getText());
         }
     }
 }
