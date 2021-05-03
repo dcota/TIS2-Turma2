@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="252.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <Label layoutX="30.0" layoutY="14.0" text="Calculadora 1.0" textFill="#ff0101">
+            <font>
+                <Font name="Arial Rounded MT Bold" size="25.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnCalcular" layoutX="101.0" layoutY="497.0" mnemonicParsing="false" onAction="#calcular" text="Calcular" />
+        <Label layoutX="52.0" layoutY="66.0" text="Número 1:" />
+        <TextField fx:id="tfNum1" layoutX="52.0" layoutY="83.0" />
+        <Label layoutX="52.0" layoutY="127.0" text="Número 2:" />
+        <TextField fx:id="tfNum2" layoutX="52.0" layoutY="144.0" />
+        <VBox alignment="CENTER_LEFT" layoutY="200.0" prefHeight="129.0" prefWidth="252.0" spacing="20.0">
+            <children>
+                <RadioButton fx:id="rbMult" mnemonicParsing="false" text="Multiplicação" />
+                <RadioButton fx:id="rbSubtr" mnemonicParsing="false" text="Subtração" />
+                <RadioButton fx:id="rbSoma" mnemonicParsing="false" text="Soma" />
+                <RadioButton fx:id="rbDiv" mnemonicParsing="false" text="Divisão" />
+            </children>
+            <padding>
+                <Insets left="70.0" />
+            </padding>
+        </VBox>
+        <Label layoutX="56.0" layoutY="382.0" text="Resultado:" />
+        <TextField fx:id="tfResultado" layoutX="56.0" layoutY="401.0" />
+    </children>
+</AnchorPane>
