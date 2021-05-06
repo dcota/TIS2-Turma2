@@ -16,7 +16,7 @@
                 <Font name="Arial Rounded MT Bold" size="25.0" />
             </font>
         </Label>
-        <Button fx:id="btnCalcular" layoutX="101.0" layoutY="497.0" mnemonicParsing="false" onAction="#calcular" text="Calcular" />
+        <Button fx:id="btnCalcular" layoutX="68.0" layoutY="497.0" mnemonicParsing="false" onAction="#calcular" text="Calcular" />
         <Label layoutX="52.0" layoutY="66.0" text="Número 1:" />
         <TextField fx:id="tfNum1" layoutX="52.0" layoutY="83.0" />
         <Label layoutX="52.0" layoutY="127.0" text="Número 2:" />
@@ -34,5 +34,6 @@
         </VBox>
         <Label layoutX="56.0" layoutY="382.0" text="Resultado:" />
         <TextField fx:id="tfResultado" layoutX="56.0" layoutY="401.0" />
+      <Button fx:id="btnLimpar" layoutX="142.0" layoutY="497.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
     </children>
 </AnchorPane>
