@@ -20,7 +20,7 @@
       <TableView layoutX="321.0" layoutY="44.0" prefHeight="445.0" prefWidth="444.0">
         <columns>
           <TableColumn prefWidth="157.0" text="Primeiro nome" />
-          <TableColumn prefWidth="156.0" text="Ùltimo nome" />
+          <TableColumn prefWidth="156.0" text="Último nome" />
             <TableColumn prefWidth="130.0" text="Género" />
         </columns>
       </TableView>
