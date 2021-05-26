@@ -13,7 +13,7 @@
       <TextField fx:id="tfPrimNome" layoutX="52.0" layoutY="54.0" />
       <TextField fx:id="tfUltNome" layoutX="52.0" layoutY="119.0" />
       <ComboBox fx:id="cbGenero" layoutX="52.0" layoutY="188.0" prefWidth="150.0" />
-      <Button fx:id="btnAdicionar" layoutX="94.0" layoutY="264.0" mnemonicParsing="false" onAction="#adicionar" text="Adicionar" />
+      <Button fx:id="btnAdicionar" layoutX="95.0" layoutY="276.0" mnemonicParsing="false" onAction="#adicionar" prefHeight="25.0" prefWidth="81.0" text="Adicionar" />
       <Label layoutX="52.0" layoutY="37.0" text="Primeiro nome:" />
       <Label layoutX="57.0" layoutY="102.0" text="Último nome:" />
       <Label layoutX="52.0" layoutY="171.0" text="Género:" />
@@ -24,5 +24,7 @@
             <TableColumn fx:id="colGenero" prefWidth="130.0" text="Género" />
         </columns>
       </TableView>
+      <Button fx:id="btnEliminar" layoutX="96.0" layoutY="335.0" mnemonicParsing="false" onAction="#eliminar" prefWidth="81.0" text="Eliminar" />
+      <Button fx:id="btnAlterar" layoutX="97.0" layoutY="392.0" mnemonicParsing="false" onAction="#alterar" prefWidth="81.0" text="Alterar" />
    </children>
 </AnchorPane>
