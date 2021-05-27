@@ -88,14 +88,40 @@ public class Controller {
     public void alterar (ActionEvent event) {
 
         try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/vistaAlterar.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.initModality(Modality.WINDOW_MODAL);
-            stage.setScene(scene);
-            System.out.println("Alterar");
-            stage.showAndWait();
+            //criar objeto com a linha selecionada
+            Pessoa p = this.tblPessoas.getSelectionModel().getSelectedItem();
+            if(p==null){
+                alertaAviso("Tem de selecionar uma linha para alterar...");
+            }
+            else {
+                //preparar o lançamento da nova vista
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/vistaAlterar.fxml"));
+                Parent root = loader.load();
+
+                //linha que permite chamar métodos do controller da segunda vista
+                ControllerAlterar controller = loader.getController();
+                controller.getPessoa(p);
+
+                //mostrar a segunda vista
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.initModality(Modality.WINDOW_MODAL);
+                stage.setScene(scene);
+                stage.showAndWait();
+
+                //vai buscar a pessoa alterada ao segundo controller
+                Pessoa pAlterada = controller.getPessoaAlterada();
+
+                //substitui os valores de p pelos de pAlterada
+                p.setPrimNome(pAlterada.getPrimNome());
+                p.setUltNome(pAlterada.getUltNome());
+                p.setGenero(pAlterada.getGenero());
+
+                //atualiza a tabela
+                this.tblPessoas.refresh();
+
+            }
+
         }
         catch (Exception e){
 
