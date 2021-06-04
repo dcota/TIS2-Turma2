@@ -24,6 +24,7 @@ public class Controller {
     @FXML TableColumn<Pessoa,String> colGenero;
     @FXML Button btnEliminar;
     @FXML Button btnAlterar;
+    @FXML Button btnSair;
 
     private ObservableList<Pessoa> listaPessoas;
 
@@ -86,7 +87,6 @@ public class Controller {
 
     @FXML
     public void alterar (ActionEvent event) {
-
         try{
             //criar objeto com a linha selecionada
             Pessoa p = this.tblPessoas.getSelectionModel().getSelectedItem();
@@ -100,6 +100,8 @@ public class Controller {
 
                 //linha que permite chamar métodos do controller da segunda vista
                 ControllerAlterar controller = loader.getController();
+
+                //chama método do controller da segunda vista para passar o objeto p
                 controller.getPessoa(p);
 
                 //mostrar a segunda vista
@@ -119,18 +121,20 @@ public class Controller {
 
                 //atualiza a tabela
                 this.tblPessoas.refresh();
-
+                alertaInforma("Pessoa alterada com sucesso!");
             }
-
         }
         catch (Exception e){
 
         }
-
-
-
     }
 
+    @FXML
+    void sair(ActionEvent event) {
+        alertaInforma("Até à próxima!");
+        Stage stage = (Stage) this.btnSair.getScene().getWindow();
+        stage.close();
+    }
 
 
     public void limpar(){

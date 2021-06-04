@@ -26,5 +26,6 @@
       </TableView>
       <Button fx:id="btnEliminar" layoutX="96.0" layoutY="335.0" mnemonicParsing="false" onAction="#eliminar" prefWidth="81.0" text="Eliminar" />
       <Button fx:id="btnAlterar" layoutX="97.0" layoutY="392.0" mnemonicParsing="false" onAction="#alterar" prefWidth="81.0" text="Alterar" />
+      <Button fx:id="btnSair" layoutX="14.0" layoutY="507.0" mnemonicParsing="false" onAction="#sair" text="SAIR" />
    </children>
 </AnchorPane>

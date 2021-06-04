@@ -5,7 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tabela_exemplo/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tabela_exemplo/controller/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ControllerAlterar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ControllerAlterar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/sample.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
