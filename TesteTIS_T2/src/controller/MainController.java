@@ -36,7 +36,7 @@ public class MainController {
                 try {
                     //tenta converter o valor introduzido para inteiro
                     //se contém caracteres inválidos lança exceção apanhada na linha 71
-                    long ano = Long.parseLong(this.tfAno.getText());
+                    int ano = Integer.parseInt(this.tfAno.getText());
                     //se o valor da caixa tiver mais do que 6 caracteres informa
                     if(this.tfAno.getText().length() > 6){
                         alertaAtencao("No máximo, o ano pode ter 6 dígitos");

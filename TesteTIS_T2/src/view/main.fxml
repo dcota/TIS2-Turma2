@@ -14,9 +14,10 @@
             <Font name="System Bold" size="26.0" />
          </font>
       </Label>
-      <Button fx:id="btnValidar" layoutX="154.0" layoutY="306.0" mnemonicParsing="false" onAction="#validar" prefHeight="25.0" prefWidth="60.0" text="Validar" />
-      <Button fx:id="btnSair" layoutX="417.0" layoutY="306.0" mnemonicParsing="false" onAction="#sair" prefWidth="60.0" text="Sair" />
-      <Label layoutX="214.0" layoutY="145.0" text="Introduza um ano (até 6 dígitos):" />
-      <TextField fx:id="tfAno" layoutX="226.0" layoutY="175.0" />
+      >
    </children>
 </AnchorPane>
+<Button fx:id="btnValidar" layoutX="154.0" layoutY="306.0" mnemonicParsing="false" onAction="#validar" prefHeight="25.0" prefWidth="60.0" text="Validar" />
+<Button fx:id="btnSair" layoutX="417.0" layoutY="306.0" mnemonicParsing="false" onAction="#sair" prefWidth="60.0" text="Sair" />
+<Label layoutX="214.0" layoutY="145.0" text="Introduza um ano (até 6 dígitos):" />
+<TextField fx:id="tfAno" layoutX="226.0" layoutY="175.0" /
