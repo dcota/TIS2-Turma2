@@ -32,7 +32,7 @@ public class MySQLConnection {
 
     public ResultSet getCidades(){
         ResultSet result = null;
-        String sql = "SELECT city.Name, country.Name\n" +
+        String sql = "SELECT city.ID, city.Name, country.Name\n" +
                 "FROM city, country\n" +
                 "WHERE city.CountryCode = country.Code\n" +
                 "ORDER BY country.name ASC";
