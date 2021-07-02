@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Cidade;
@@ -38,7 +39,8 @@ public class MainController {
     @FXML
     private Button btnDetalhe;
 
-    private ObservableList<Cidade> listaCidades;
+    private ObservableList<Cidade> listaCidades; //lista com todas as cidades que existem na bd
+    private ObservableList<Cidade>  cidadesFiltradas; //lista para armazenar as cidades pesquisadas
 
     private MySQLConnection connection;
 
@@ -47,6 +49,7 @@ public class MainController {
     public void initialize(){
         //preparação da tabela
         listaCidades = FXCollections.observableArrayList();
+        cidadesFiltradas = FXCollections.observableArrayList();
         this.tblCidades.setItems(listaCidades);
         this.colCidade.setCellValueFactory(new PropertyValueFactory<Cidade,String>("nomeCidade"));
         this.colPais.setCellValueFactory(new PropertyValueFactory<Cidade,String>("nomePais"));
@@ -78,12 +81,41 @@ public class MainController {
     }
     //método para inserir nova cidade
     public void inserir(ActionEvent event){
-
+        try{
+            //preparar o lançamento da vista inserir cidade
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/newCityView.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.setScene(scene);
+            stage.showAndWait();
+            tabelaInicial();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
     //método para pesquisar cidades na tabela
-    public void pesquisar() {
+    public void pesquisar(KeyEvent event) {
+        String textoPesquisa = this.tfPesquisa.getText();
+        if(textoPesquisa==null){
+            this.tblCidades.setItems(this.listaCidades);
+        } else {
+            this.cidadesFiltradas.clear();
+            for(int i = 0 ; i<100; i++){
 
+            }
+            for(Cidade cidade : this.listaCidades){
+                if(cidade.getNomeCidade().toLowerCase().contains(textoPesquisa.toLowerCase())){
+                    this.cidadesFiltradas.add(cidade);
+                }
+            }
+            this.tblCidades.setItems(this.cidadesFiltradas);
+            this.tblCidades.refresh();
+        }
     }
+
     //método para ver os detalhes de uma cidade
     public void detalhe (ActionEvent event){
         //seleciona o objeto da linha selecionada
@@ -98,6 +130,7 @@ public class MainController {
 
                 //ir buscar o método getID ao segundo controller
                 CityController controllerDetalhe = loader.getController();
+                //chamar o método getID e passar o ID da cidade a consultar
                 controllerDetalhe.getID(linhaCidade.getID());
 
 

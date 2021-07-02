@@ -45,6 +45,56 @@ public class MySQLConnection {
         return result;
     }
 
+    public ResultSet getDetalheCidade(int ID){
+        ResultSet result = null;
+        String sql = "SELECT city.Name, country.Name, city.District, city.Population\n" +
+                "FROM city, country\n" +
+                "WHERE city.CountryCode = country.Code AND city.ID = " + ID;
+        try{
+            Statement s = connection.createStatement();
+            result = s.executeQuery(sql);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return result;
+    }
+
+    public ResultSet getPaises(){
+        ResultSet result = null;
+        String sql = "SELECT Code, Name\n" +
+                "FROM country\n" +
+                "ORDER BY Name ASC";
+        try{
+            Statement s = connection.createStatement();
+            result = s.executeQuery(sql);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return result;
+    }
+
+    public boolean inserirCidade (Cidade c){
+        try {
+            //preprar a inserção da nova linha
+            String sql = "INSERT INTO city (Name, CountryCode, District, Population) VALUES (?,?,?,?)";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1,c.getNomeCidade());
+            statement.setString(2,c.getCodPais());
+            statement.setString(3,c.getDistrito());
+            statement.setInt(4,c.getPop());
+            //executar a inserção
+            int linhas = statement.executeUpdate();
+            if(linhas == 1){
+                return true;
+            }
+            else return false;
+
+        } catch (SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 
 
 }
